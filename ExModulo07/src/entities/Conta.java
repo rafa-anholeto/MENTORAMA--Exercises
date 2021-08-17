@@ -39,7 +39,7 @@ public abstract class Conta {
 
     public abstract Double getSaldo();
 
-    public abstract Double getSacar() ;
+    public abstract Double sacar() ;
 
     public abstract Double getDepositar() ;
 

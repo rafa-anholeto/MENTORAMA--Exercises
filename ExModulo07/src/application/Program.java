@@ -32,12 +32,17 @@ public class Program {
                 double vSaque = sc.nextDouble();
                 double sacar;
                 sacar = vSaque;
-                ContaCorrente cc1 = new ContaCorrente(22,"AA", 1,100.00,1000.00, sacar);
+                ContaCorrente cc1 = new ContaCorrente(22,"AA", 1,100.00,500.00, sacar);
                 System.out.println(cc1.toString());
                 break;
             }
             case 2:{
-                ContaPoupanca p1 = new ContaPoupanca(33,"BB", 2, 10.00,20,0.05);
+                System.out.print("Qual valor deseja sacar da conta poupança? R$ ");
+                sc = new Scanner(System.in);
+                double vSaque = sc.nextDouble();
+                double sacar;
+                sacar = vSaque;
+                ContaPoupanca p1 = new ContaPoupanca(33,"BB", 2, 10.00,20,0.05, sacar);
                 System.out.println(p1.toString());
                 ;
                 break;
@@ -54,7 +59,7 @@ public class Program {
     }
 
     public static void saque() {
-            System.out.print("Qual valor deseja sacar? R$");
+            System.out.print("Qual valor deseja sacar? R$ ");
             Scanner sc = new Scanner(System.in);
             double vSaque = sc.nextDouble();
             double sacar;

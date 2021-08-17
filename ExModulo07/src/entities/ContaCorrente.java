@@ -24,9 +24,9 @@ public class ContaCorrente extends Conta {
     }
 
     @Override
-    public Double getSacar() {
+    public Double sacar() {
         if(getSaldo() < saque){
-            System.out.println("Erro, sem limite, tente novamente.");
+            System.out.println("Erro, sem limite em sua conta, tente novamente.");
             System.exit(0);
         }
         else{
@@ -43,9 +43,9 @@ public class ContaCorrente extends Conta {
     public String toString() {
         return "Conta Corrente - BANCO ABC PAULISTA"
                 +"\n "+"Saldo total da conta: R$"+ String.format("%.2f",getSaldo())
-                +"\n "+"Valor sacado R$ "+ String.format("%.2f",getSacar()) +" e seu novo saldo é de R$ "+ String.format("%.2f",getSaldo()- saque)
-                +"\n "+ "Saldo restante: " + String.format("%.2f",getSaldo()- saque)
-                +"\n "+ "Cheque Especial da conta: "+ String.format("%.2f",chequeEspecial);
+                + " devido ao cheque especial."
+                +"\n "+"Valor sacado R$ "+ String.format("%.2f",sacar()) +" e seu novo saldo é de R$ "+ String.format("%.2f",getSaldo()- saque)
+                +"\n "+ "Saldo restante: " + String.format("%.2f",getSaldo()- saque);
 
     }
 }
