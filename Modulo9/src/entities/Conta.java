@@ -1,15 +1,25 @@
 package entities;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public abstract class Conta {
     private Integer numero;
     private String banco;
     private Integer agencia;
     protected Double saldo;
+    private List<String> contas = new ArrayList<>();
+    Random aleatorio = new Random();
+
+    public Conta(){
+
+    }
 
     public Conta(Integer numero, String banco, Integer agencia, Double saldo) {
-        this.numero = numero;
-        this.banco = banco;
-        this.agencia = agencia;
+        this.numero = aleatorio.nextInt(1000);
+        this.banco = "ABC";
+        this.agencia = aleatorio.nextInt(300);
         this.saldo = saldo;
     }
 
@@ -37,15 +47,20 @@ public abstract class Conta {
         this.agencia = agencia;
     }
 
-    public abstract Double getSaldo();
+    public Double getSaldo() {
+        return null;
+    }
 
-    public abstract Double sacar() ;
+    public abstract Double sacar();
 
-    public abstract Double getDepositar() ;
+    public abstract Double depositar();
+
+    public abstract Double transferir();
 
 
-
-
+    public List<String> getContas() {
+        return contas;
+    }
 
     @Override
     public String toString() {
@@ -56,4 +71,5 @@ public abstract class Conta {
                 ", saldo=" + saldo +
                 '}';
     }
+
 }
